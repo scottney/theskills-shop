@@ -1,0 +1,196 @@
+#main_nav_bar {
+	position: fixed;
+	z-index: 25;
+	width: 100%;
+}
+
+#link_nav {
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}
+
+#link_nav:hover {
+	background-color: #A25C0C;
+}
+
+#main_images_slider {
+  border: 1px solid black;
+  width: 100%;
+  height: 725px;
+  overflow: hidden;
+  position: relative;
+}
+
+#carousel_main_buttons {
+  /*border: 1px solid white;*/
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  margin-top: 315px;
+  z-index: 15;
+}
+
+.nth_slide {
+  width: 100%;
+  height: 725px;
+}
+
+.head_one {
+    font-family: sans-serif, serif, arial, helvetica;
+    font-style: italic;
+    font-weight: bold;
+    color: white; 
+    position: relative;
+    margin-bottom: 255px; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */ 
+    width: 100%;
+    padding: 20px;
+    border-radius: 75px; 
+}
+
+#button_link_container {
+	padding: 35px;
+}
+
+#button_link {
+	text-decoration: none;
+    font-size: 14px;
+    font-family: Arial;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #343A40;
+    border: 1px solid #076BD2;
+    border-radius: 75px;
+    padding: 35px;
+}
+
+#button_link:hover {
+	color: #A25C0C;
+	box-shadow: 4px 8px 4px 8px rgba(0, 0, 0, 1.0);
+
+}
+
+#system_service_area:hover {
+	cursor: pointer;
+
+}
+
+.about_us_icons {
+  height: 215px;
+  width: 215px;
+}
+
+#contacts_icons {
+	color: white;
+}
+
+#contacts_icons:hover {
+	color: blue;
+}
+
+#portal_card_container{
+    width: 95%;
+    margin-top: 5%;
+    margin-left: 2.5%;
+}
+
+#input_first_name, #input_surname, #input_middle_name, #input_id_number, #input_customer_service_number, 
+#input_skills_person_service_number, #input_phone_number, #input_alternative_phone_number, #input_email, 
+#input_address, #input_location, #input_booking_services, #input_service_required, #input_skillset, 
+#input_skillset_description, #input_passport_photo, #input_police_report, #input_letters, #input_text_message, 
+#input_date, #input_time, #input_created_at, #input_updated_at, #input_blog_post_name, #input_blog_post_author, 
+#input_blog_post_description {
+    border-radius: 15px;
+    width: 85%;
+}
+
+#input_first_name:hover, #input_surname:hover, #input_middle_name:hover, #input_id_number:hover, 
+#input_customer_service_number:hover, #input_skills_person_service_number:hover, #input_phone_number:hover, 
+#input_alternative_phone_number:hover, #input_email:hover, #input_address:hover, #input_location:hover, 
+#input_booking_services:hover, #input_service_required:hover, #input_skillset:hover, 
+#input_skillset_description:hover, #input_passport_photo:hover, #input_police_report:hover, #input_letters:hover, 
+#input_text_message:hover, #input_date:hover, #input_time:hover, #input_created_at:hover, #input_updated_at:hover, 
+#input_blog_post_name:hover, #input_blog_post_author:hover, #input_blog_post_description:hover {
+    background: #F8CC9B;
+    cursor: pointer;
+}
+
+.rating > input {
+  /* Remove radio buttons */
+  display: none;
+}
+
+.rating > label:before { 
+  content: "\f005"; /* Star */
+  margin: 2px;
+  font-size: 28px;
+  font-family: FontAwesome;
+  display: inline-block; 
+}
+
+.rating > label {
+  /* Start color when not clicked */
+  color: #000000;
+}
+
+.rating > input:hover ~ label { 
+  /* Set color when star hover */
+  color: #A25C0C;  
+  } 
+
+.rating > input:checked ~ label { 
+  /* Set color when star checked */
+  color: #A25C0C; 
+}
+
+/******** Start Of Blog Styling **********/
+
+.background-image {
+  background-image: url('/images/landscaping.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 475px;
+}
+
+.blog-images {
+  width: 415px;
+  height: 575px;
+}
+
+.blog-posts-images {
+  width: 205px;
+  height: 285px;
+}
+
+.blog-slug {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.blog-slug:hover {
+  text-decoration: none;
+}
+
+/******** End Of Blog Styling **********/
+
+/******** Start Of Customer Bookings Admin Page Styling **********/
+
+/******** End Of Customer Bookings Admin Page Styling **********/
+
+/******** Start Of Customer Rating Admin Page Styling **********/
+
+/******** End Of Customer Rating Admin Page Styling **********/
+
+/******** Start Of Main Calendar Styling **********/
+
+
+
+/******** End Of Main Calendar Styling **********/
+
+
