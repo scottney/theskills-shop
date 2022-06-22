@@ -1,36 +1,51 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    <div class="container-fluid content-wrapper container-fluid">
+    <div class="container-fluid content-wrapper">
         <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <div class="card shadow">
-                    <div class="card-header">
-                        <div class="row m-3">
-                            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div class="card-header primaryColor">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <div class="card-title">
-                                    <h5 class="display-5">CUSTOMERS RATING RECORDS</h5>
+                                    <h2 class="text-white"><b>CUSTOMERS RATING RECORDS</b></h2>
                                 </div>
                             </div>
 
-                            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <div class="row">
-                                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                                         <form action="{{ route('customers_rating_search') }}" method="GET" class="search_customers_rating_form" id="query" name="query" accept-charset="UTF-8" enctype="multipart/form-data">
-                                            <div class="form-row">
+                                            <div class="row">
                                                 @csrf
 
-                                                <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                                    <input type="text" class="form-control" value="" name="query" id="query" placeholder="Search customer ratings here..." autofocus>
+                                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                                    <div class="row">
+                                                       <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 noPadding">
+                                                            <input type="text" class="form-control" value="" name="query" id="query" placeholder="Search customer ratings here..." autofocus>
+                                                       </div>
+
+                                                       <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 noPadding">
+                                                           <button type="submit" class="fa fa-search search_icon" title="Search..."></button>
+                                                       </div>
+                                                   </div>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
-
-                                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                                        {{-- Customers rating sort functionality will go here --}}
-                                    </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="row pt-1">
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                @if (Session::has('records-error-message'))
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                    <i class="fa-solid fa-circle-xmark"></i>{{Session::get('records-error-message')}}
+                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>

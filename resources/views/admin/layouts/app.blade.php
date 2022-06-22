@@ -5,15 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>TheSkillsShop | Dashboard</title>
+  <title>TheSkillsShop</title>
 
   <meta name="csrf-token" content="{{ csrf_token() }}" />
   
   <!-- REQUIRED SCRIPTS -->
+  <!-- Script handler for JQuery -->
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+  <!-- Script handler for Popper Js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.2/umd/popper.min.js" integrity="sha512-aDciVjp+txtxTJWsp8aRwttA0vR2sJMk/73ZT7ExuEHv7I5E6iyyobpFOlEFkq59mWW8ToYGuVZFnwhwIUisKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Script handler for Bootstrap Js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Bootstrap script that controls dropdown boxes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js" integrity="sha512-pax4MlgXjHEPfCwcJLQhigY7+N8rt6bVvWLFyUMuxShv170X53TRzGPmPkZmGBhk+jikR8WBM4yl7A9WMHHqvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- AdminLTE -->
+  <script src="{{ asset('dist/js/adminlte.js') }}"></script>
+    
+  <!-- OPTIONAL SCRIPTS -->
+  <script src="{{ asset('dist/js/demo.js') }}"></script>
+  <script src="{{ asset('dist/js/pages/dashboard3.js') }}"></script>
 
-  <!-- jQuery -->
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css" integrity="sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+  <!-- Default Admin LTE 3 jQuery Script -->
   <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
-  <!-- Bootstrap -->
+  <!-- Default Admin LTE 3 Bootstrap Script -->
   <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <!-- AdminLTE -->
   <script src="{{ asset('dist/js/adminlte.js') }}"></script>
@@ -79,7 +96,7 @@ to get the desired effect
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href=" # " class="brand-link">
-      <img src="{{ ('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">THESKILLSSHOP</span>
     </a>
@@ -130,7 +147,7 @@ to get the desired effect
             </a>
           </li>
           
-          <li class="nav-header">CONTENT</li>
+          <li class="nav-header text-white"><b>CONTENT</b></li>
           <!--<li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
@@ -140,14 +157,6 @@ to get the desired effect
               </p>
             </a>
           </li> -->
-          <li class="nav-item">
-            <a href=" # " class="nav-link" target="blank">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                Gallery
-              </p>
-            </a>
-          </li>
           <li class="nav-item has-treeview">
             <a href=" {{ route('messages') }} " class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
@@ -172,45 +181,15 @@ to get the desired effect
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-folder"></i>
-              <p>
-                Documents
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href=" # " class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Police Reports</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href=" # " class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Letters of Recommendation</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-header">MAIN SITE LINKS</li>
+          <li class="nav-header text-white"><b>MAIN SITE LINKS</b></li>
           <li class="nav-item">
-            <a href=" {{ route('index_main') }} " class="nav-link">
-              <p>
-                Home
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href=" {{ route('blog') }} " class="nav-link">
+            <a href=" {{ route('adminBlog') }} " class="nav-link">
               <p>
                 Blog
               </p>
             </a>
           </li>
-          <li class="nav-header">OPERATIONS</li>
+          <li class="nav-header text-white"><b>OPERATIONS</b></li>
           <li class="nav-item">
             
               <a class="nav-link" href="{{ route('logout') }}"onclick="event.preventDefault();
@@ -240,16 +219,28 @@ to get the desired effect
 
 <!-- ./Body -->
 
-<main class="py-4">
-  @yield('content')
-
-  @include('sweetalert::alert')
-</main>
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <main class="py-4">
+      @yield('content')
+    </main>
+  </div>
+</div>
 
 <!-- ./Body -->
 
-<!-- Scripts -->
-@stack('scripts')
+<script type="text/javascript">
+  window.addEventListener('load', toolTips);
+
+    //Script responsible for initialising tooltips
+      function toolTips() {
+          var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+          var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl);
+          })
+      }
+
+</script>
 
 </body>
 </html>

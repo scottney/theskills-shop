@@ -22,7 +22,7 @@ class CreateSkillsPersonRegistrationTable extends Migration
             $table->unsignedBigInteger('skills_person_service_number')->nullable()->index()->unique();
             $table->string('phone_number');
             $table->string('alternative_phone_number');
-            $table->string('email');
+            $table->string('skills_person_email');
             $table->string('address');
             $table->string('skillset');
             $table->string('skillset_description');

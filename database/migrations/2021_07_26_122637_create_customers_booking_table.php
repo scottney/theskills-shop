@@ -22,7 +22,7 @@ class CreateCustomersBookingTable extends Migration
             $table->unsignedBigInteger('customers_service_number')->nullable()->index()->unique();
             $table->string('phone_number');
             $table->string('alternative_phone_number');
-            $table->string('email');
+            $table->string('customer_email');
             $table->string('address');
             $table->string('services');
             $table->string('service_required');

@@ -7,7 +7,7 @@
           <div class="content-wrapper container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
-              <div class="col-lg-3 col-6">
+              <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                 <!-- small box -->
                 <div class="small-box bg-info">
                   <div class="inner">
@@ -19,8 +19,8 @@
                   <a href=" {{ route('customers_booking_records') }} " class="small-box-footer">GO <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
-              <!-- ./col -->
-              <div class="col-lg-3 col-6">
+
+              <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                 <!-- small box -->
                 <div class="small-box bg-success">
                   <div class="inner">
@@ -32,8 +32,12 @@
                   <a href=" {{ route('customers_rating_records') }} " class="small-box-footer">GO <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
-              <!-- ./col -->
-              <div class="col-lg-3 col-6">
+
+              <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                 <!-- small box -->
                 <div class="small-box bg-warning">
                   <div class="inner">
@@ -45,8 +49,8 @@
                   <a href=" {{ route('skills_person_registration_records') }} " class="small-box-footer">GO <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
-              <!-- ./col -->
-              <div class="col-lg-3 col-6">
+
+              <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
@@ -58,9 +62,10 @@
                   <a href=" {{ route('skills_person_rating_records') }} " class="small-box-footer">GO <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
-              <!-- ./col -->
+
+              <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4"></div>
             </div>
-          </div><!-- /.container-fluid -->
+          </div>
       </div>
 <!-- Main content -->
 

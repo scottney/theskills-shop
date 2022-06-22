@@ -24,7 +24,7 @@ class CustomersBooking extends Model
         'customers_service_number',
         'phone_number',
         'alternative_phone_number',
-        'email',
+        'customer_email',
         'address',
         'services',
         'service_required',

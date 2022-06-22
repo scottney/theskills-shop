@@ -1,8 +1,237 @@
+#app {
+    font-family: serif, sans-serif;
+}
+
+#app p {
+    font-size: 18px;
+}
+
+/******************************* Start of Contact Us Icons styling *******************************/
+
+#sy-whatshelp {
+  right: 25px;
+  bottom: 25px;
+  position: fixed;
+  z-index: 9999;
+}
+
+#sy-whatshelp a {
+  position: relative;
+}
+
+#sy-whatshelp a.sywh-open-services {
+  background-color: #129bf4;
+  color: #fff;
+  line-height: 55px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 23px;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  box-shadow: 2px 2px 8px -3px #000;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  display: inline-block;
+}
+
+#sy-whatshelp a.sywh-open-services i {
+  line-height: 55px;
+}
+
+#sy-whatshelp a.sywh-open-services i.fa-times {
+  display: none;
+}
+
+#sy-whatshelp .sywh-services {
+  width: 55px;
+  height: auto;
+}
+
+#sy-whatshelp .sywh-services a {
+  display: none;
+}
+
+#sy-whatshelp .sywh-services a i {
+  background-color: #129bf4;
+  color: #fff;
+  line-height: 55px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 23px;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  box-shadow: 2px 2px 8px -3px #000;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+}
+
+#sy-whatshelp .sywh-services a.email i {
+  background-color: #b92b27;
+}
+
+#sy-whatshelp .sywh-services a.instagram i {
+  background-color: #e4405f;
+}
+
+#sy-whatshelp .sywh-services a.messenger i {
+  background-color: #0084ff;
+}
+
+#sy-whatshelp .sywh-services a.sendMessage i {
+  background-color: #0084ff;
+}
+
+#sy-whatshelp .sywh-services a.newsletter i {
+  background-color: #0084ff;
+}
+
+#sy-whatshelp .sywh-services a.mailAddress i {
+  background-color: #0084ff;
+}
+
+#sy-whatshelp .sywh-services a.whatsapp i {
+  background-color: #25d366;
+}
+
+#sy-whatshelp .sywh-services a.call i {
+  background-color: #ff6600;
+}
+
+a[data-tooltip] {
+  position: relative;
+}
+
+a[data-tooltip]::before,
+a[data-tooltip]::after {
+  position: absolute;
+  display: none;
+  opacity: 0.85;
+  transition: all 0.3s ease-in-out;
+}
+
+a[data-tooltip]::before {
+  content: attr(data-tooltip);
+  background: #000;
+  color: #fff;
+  font-size: 13px;
+  padding: 7px 11px;
+  border-radius: 5px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a[data-tooltip]::after {
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  content: "";
+}
+
+a[data-tooltip]:hover::before,
+a[data-tooltip]:hover::after {
+  display: block;
+}
+
+a.sywh-open-services[data-tooltip]::before,
+a.sywh-open-services[data-tooltip]::after {
+  display: block;
+}
+
+a.data-tooltip-hide[data-tooltip]::before,
+a.data-tooltip-hide[data-tooltip]::after {
+  display: none !important;
+}
+
+a.sywh-open-services[data-tooltip][data-placement="left"]::before {
+  top: 11px;
+}
+
+a[data-tooltip][data-placement="left"]::before {
+  top: -7px;
+  right: 100%;
+  line-height: normal;
+  margin-right: 10px;
+}
+
+a[data-tooltip][data-placement="left"]::after {
+  border-left-color: #000;
+  border-right: none;
+  top: 50%;
+  right: 100%;
+  margin-top: -6px;
+  margin-right: 4px;
+}
+
+a[data-tooltip][data-placement="right"]::before {
+  top: -7px;
+  left: 100%;
+  line-height: normal;
+  margin-left: 10px;
+}
+
+a[data-tooltip][data-placement="right"]::after {
+  border-right-color: #000;
+  border-left: none;
+  top: 50%;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: 4px;
+}
+
+a[data-tooltip][data-placement="top"]::before {
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 10px;
+}
+
+a[data-tooltip][data-placement="top"]::after {
+  border-top-color: #000;
+  border-bottom: none;
+  bottom: 100%;
+  left: 10px;
+  margin-bottom: 4px;
+}
+
+a[data-tooltip][data-placement="bottom"]::before {
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+}
+
+a[data-tooltip][data-placement="bottom"]::after {
+  border-bottom-color: #000;
+  border-top: none;
+  top: 100%;
+  left: 10px;
+  margin-top: 4px;
+}
+
+
+/******************************* End of Contact Us Icons styling *******************************/
+
 #main_nav_bar {
 	position: fixed;
 	z-index: 25;
 	width: 100%;
 }
+
+.noPadding {
+    padding: 0px;
+}
+
+.navbarTogglerColor {
+    background-color: #FFFFFF;
+}
+
+/******************************* Start of main navigation bar styling *******************************/
 
 #link_nav {
 	border-left: 1px solid white;
@@ -13,44 +242,111 @@
 	background-color: #A25C0C;
 }
 
+/******************************* End of main navigation bar styling *******************************/
+
+/******************************* Start of images slider styling *******************************/
+
 #main_images_slider {
   border: 1px solid black;
   width: 100%;
-  height: 725px;
+  height: auto;
   overflow: hidden;
   position: relative;
 }
 
-#carousel_main_buttons {
+#main_buttons {
   /*border: 1px solid white;*/
   height: 75px;
   width: 75px;
   position: absolute;
-  margin-top: 315px;
+  top: 50%;
   z-index: 15;
 }
 
-.nth_slide {
-  width: 100%;
-  height: 725px;
+.nth_slide1 {
+    background: url('/images/carpenter.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 625px;
+}
+
+.nth_slide2 {
+    background: url('/images/construction-worker.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 625px;
+}
+
+.nth_slide3 {
+    background: url('/images/taxi.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 625px;
+}
+
+.nth_slide4 {
+    background: url('/images/garden.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 625px;
+}
+
+.nth_slide5 {
+    background: url('/images/landscape.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 625px;
 }
 
 .head_one {
-    font-family: sans-serif, serif, arial, helvetica;
-    font-style: italic;
     font-weight: bold;
     color: white; 
-    position: relative;
-    margin-bottom: 255px; 
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.5); /* Black see-through */ 
-    width: 100%;
     padding: 20px;
     border-radius: 75px; 
+    margin-bottom: 20%;
 }
 
-#button_link_container {
-	padding: 35px;
+.blogImageText {
+    font-weight: bold;
+    color: white; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */ 
+    padding: 20px;
+    border-radius: 75px; 
+    margin-top: 10%;
+}
+
+/******************************* End of images slider styling *******************************/
+
+/******************************* Start of link buttons styling *******************************/
+#controlIcon {
+    color: black;
+    opacity: 1;
+    background-color: #000000;
+    width: 75px;
+    height: 75px;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+.left_handler {
+    margin-left: 2%;
+}
+
+.right_handler {
+    margin-right: 2%;
 }
 
 #button_link {
@@ -58,9 +354,9 @@
     font-size: 14px;
     font-family: Arial;
     font-weight: bold;
+    width: 100%;
     color: white;
     white-space: nowrap;
-    text-align: center;
     background-color: #343A40;
     border: 1px solid #076BD2;
     border-radius: 75px;
@@ -68,55 +364,140 @@
 }
 
 #button_link:hover {
-	color: #A25C0C;
-	box-shadow: 4px 8px 4px 8px rgba(0, 0, 0, 1.0);
-
+	box-shadow: 4px 8px 4px 8px #A25C0C;
 }
 
 #system_service_area:hover {
-	cursor: pointer;
-
+    box-shadow: 10px 10px 10px 10px #A25C0C;
 }
+
+/******************************* End of link buttons styling *******************************/
+
+/******************************* Start of Service Area styling *******************************/
+
+.primaryColor{
+    background-color: #A25C0C;
+}
+
+.specialAreaColor {
+    background: #6E3E08;
+}
+
+.systemServiceAreaCard {
+    height: 100%;
+}
+
+.card-img-top {
+    border: 1px solid #000000;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+}
+
+#services-cards {
+    height: 100%;
+}
+
+.servicesCardsTextIndent {
+    text-indent: 10px;
+}
+
+/******************************* End of Service Area styling *******************************/
+
+/******************************* Start of operations styling *******************************/
+
+#operationsCards, .testimonialCards, #skillsPersonsRatingCard, #customersRatingCard, #customersBookingCard, #skillsPersonCard {
+    height: 100%;
+    box-shadow: 2px 4px 2px 4px #A25C0C;
+}
+
+/******************************* End of operations styling *******************************/
+
+/******************************* Start of about us styling *******************************/
 
 .about_us_icons {
-  height: 215px;
-  width: 215px;
+    height: 215px;
+    width: 215px;
 }
 
-#contacts_icons {
-	color: white;
+#aboutUsCards {
+    height: 100%;
 }
 
-#contacts_icons:hover {
-	color: blue;
+#aboutUsCounterArea {
+    background: url('/images/woodwork.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
-#portal_card_container{
-    width: 95%;
+/******************************* End of about us styling *******************************/
+
+/******************************* Start of google map styling *******************************/
+
+#googleMap {
+    width: 100%; 
+    height: 452px;
+}
+
+#googleMapFrame {
+    width: 100%; 
+    height: 450px;
+}
+
+/******************************* End of google map styling *******************************/
+
+/******************************* Start of login styling *******************************/
+
+#togglePassword {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    margin-top: -25px;
+}
+
+#togglePassword:hover {
+    cursor: pointer;
+}
+
+#portal_card_container {
     margin-top: 5%;
-    margin-left: 2.5%;
+    box-shadow: 2px 4px 2px 4px #A25C0C;
 }
+
+/******************************* End of login styling *******************************/
+
+/******************************* Start of customer bookings and skill persons styling *******************************/
 
 #input_first_name, #input_surname, #input_middle_name, #input_id_number, #input_customer_service_number, 
-#input_skills_person_service_number, #input_phone_number, #input_alternative_phone_number, #input_email, 
-#input_address, #input_location, #input_booking_services, #input_service_required, #input_skillset, 
-#input_skillset_description, #input_passport_photo, #input_police_report, #input_letters, #input_text_message, 
-#input_date, #input_time, #input_created_at, #input_updated_at, #input_blog_post_name, #input_blog_post_author, 
-#input_blog_post_description {
+#input_skills_person_service_number, #input_phone_number, #input_alternative_phone_number, #input_adminEmail,
+#input_adminName,#input_adminPassword, #input_adminPasswordConfirm, #input_newsletter_subscription_email, 
+#input_contactEmail, #input_customerEmail, #input_skillsPersonEmail, #input_address, #input_location, 
+#input_booking_services, #input_service_required, #input_skillset, #input_skillset_description, 
+#input_passport_photo, #input_police_report, #input_letters, #input_text_message, #input_date, #input_time, 
+#input_created_at, #input_updated_at, #input_blog_post_name,#input_blog_post_author, #input_blog_post_image, 
+#input_blog_post_video, #input_blog_post_description, #query {
     border-radius: 15px;
-    width: 85%;
+    width: 100%;
 }
 
 #input_first_name:hover, #input_surname:hover, #input_middle_name:hover, #input_id_number:hover, 
 #input_customer_service_number:hover, #input_skills_person_service_number:hover, #input_phone_number:hover, 
-#input_alternative_phone_number:hover, #input_email:hover, #input_address:hover, #input_location:hover, 
-#input_booking_services:hover, #input_service_required:hover, #input_skillset:hover, 
-#input_skillset_description:hover, #input_passport_photo:hover, #input_police_report:hover, #input_letters:hover, 
-#input_text_message:hover, #input_date:hover, #input_time:hover, #input_created_at:hover, #input_updated_at:hover, 
-#input_blog_post_name:hover, #input_blog_post_author:hover, #input_blog_post_description:hover {
+#input_alternative_phone_number:hover, #input_adminName:hover, #input_adminEmail:hover, #input_adminPassword:hover, 
+#input_adminPasswordConfirm:hover, #input_newsletter_subscription_email:hover, #input_contactEmail:hover, 
+#input_customerEmail:hover, #input_skillsPersonEmail:hover, #input_address:hover, #input_location:hover, 
+#input_booking_services:hover, #input_service_required:hover, #input_skillset:hover, #input_skillset_description:hover, 
+#input_passport_photo:hover, #input_police_report:hover, #input_letters:hover, #input_text_message:hover, 
+#input_date:hover, #input_time:hover, #input_created_at:hover, #input_updated_at:hover, #input_blog_post_name:hover, 
+#input_blog_post_author:hover, #input_blog_post_description:hover, #input_blog_post_image:hover, 
+#input_blog_post_video:hover {
     background: #F8CC9B;
     cursor: pointer;
 }
+
+/******************************* End of customer bookings and skill persons styling *******************************/
+
+/******************************* Start of customers and skills person styling *******************************/
 
 .rating > input {
   /* Remove radio buttons */
@@ -146,7 +527,19 @@
   color: #A25C0C; 
 }
 
-/******** Start Of Blog Styling **********/
+/******************************* End of customers and skills person styling *******************************/
+
+/******************************* Start Of Newsletter and Blog Styling *******************************/
+#newsletter-sign-up {
+    background: #A25C0C;
+    border-radius: 15px;
+    border: 1px solid white;
+}
+
+#dark-cover {
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+}
 
 .background-image {
   background-image: url('/images/landscaping.jpg');
@@ -157,14 +550,8 @@
   height: 475px;
 }
 
-.blog-images {
-  width: 415px;
-  height: 575px;
-}
-
-.blog-posts-images {
-  width: 205px;
-  height: 285px;
+.blogTextIndent {
+    text-indent: 5%;
 }
 
 .blog-slug {
@@ -177,20 +564,182 @@
   text-decoration: none;
 }
 
-/******** End Of Blog Styling **********/
+#previewImageText, #previewVideoText {
+    display: none;
+}
 
-/******** Start Of Customer Bookings Admin Page Styling **********/
+#previewImageText:hover, #previewVideoText:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+}
 
-/******** End Of Customer Bookings Admin Page Styling **********/
+#previewTextImage:hover, #previewTextVideo:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+}
 
-/******** Start Of Customer Rating Admin Page Styling **********/
+#imagePreview {
+    width: 100%;
+    height: 425px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-/******** End Of Customer Rating Admin Page Styling **********/
+#videoPreview {
+    width: 100%;
+    height: 425px;
+}
 
-/******** Start Of Main Calendar Styling **********/
+.blogReadMoreLink {
+    border-radius: 25px;
+    color: #ffffff;
+}
 
+.blogReadMoreLink:hover {
+    text-decoration: none;
+}
 
+#containerCardBlogPost {
+    width: 100%;
+    height: 300px;
+    box-shadow: 2px 2px 2px 2px #A25C0C;
+}
 
-/******** End Of Main Calendar Styling **********/
+#containerCardBlogPostBody p{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+#blogPostModalBody::-webkit-scrollbar {
+  width: 10px;               /* width of the entire scrollbar */
+}
+
+#blogPostModalBody::-webkit-scrollbar-track {
+  background: #000000;        /* color of the tracking area */
+}
+
+#blogPostModalBody::-webkit-scrollbar-thumb {
+  background-color: blue;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #FFFFFF;  /* creates padding around scroll thumb */
+}
+
+/******************************* End Of Newsletter and Blog Styling *******************************/
+
+/******************************* Start Of Customer Bookings Admin Page Styling *******************************/
+
+.search_icon {
+  padding: 10px;
+  background-color: #6699FF;
+  color: #ffffff;
+  min-width: 50px;
+  text-align: center;
+  /*border-radius: 15px;*/
+}
+
+.serviceNumberButton, .serviceFileButton {
+    border-radius: 25px;
+}
+
+.serviceNumberButton:hover, .serviceFileButton:hover {
+    text-decoration: none;
+    box-shadow: 1px 1px 1px 1px #AC25C0C;
+}
+
+/******************************* End Of Customer Bookings Admin Page Styling *******************************/
+
+/******************************* Start Of Customer Rating Admin Page Styling *******************************/
+
+/******************************* End Of Customer Rating Admin Page Styling *******************************/
+
+/******************************* Start Of Calendar Styling *******************************/
+
+.calendar {
+    display: flex;
+    flex-flow: column;
+}
+.calendar .header .month-year {
+    font-size: 20px;
+    font-weight: bold;
+    color: #636e73;
+    padding: 20px 0;
+}
+.calendar .days {
+    display: flex;
+    flex-flow: wrap;
+}
+.calendar .days .day_name {
+    width: calc(100% / 7);
+    border-right: 1px solid #2c7aca;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    color: #818589;
+    color: #fff;
+    background-color: #448cd6;
+}
+.calendar .days .day_name:nth-child(7) {
+    border: none;
+}
+.calendar .days .day_num {
+    display: flex;
+    flex-flow: column;
+    width: calc(100% / 7);
+    border-right: 1px solid #e6e9ea;
+    border-bottom: 1px solid #e6e9ea;
+    padding: 15px;
+    font-weight: bold;
+    color: #7c878d;
+    cursor: pointer;
+    min-height: 100px;
+}
+.calendar .days .day_num span {
+    display: inline-flex;
+    width: 30px;
+    font-size: 14px;
+}
+.calendar .days .day_num .booking {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background-color: #f7c30d;
+    color: #fff;
+    word-wrap: break-word;
+}
+.calendar .days .day_num .booking.green {
+    background-color: #51ce57;
+}
+.calendar .days .day_num .booking.blue {
+    background-color: #518fce;
+}
+.calendar .days .day_num .booking.red {
+    background-color: #ce5151;
+}
+.calendar .days .day_num:nth-child(7n+1) {
+    border-left: 1px solid #e6e9ea;
+}
+.calendar .days .day_num:hover {
+    background-color: #fdfdfd;
+}
+.calendar .days .day_num.ignore {
+    background-color: #fdfdfd;
+    color: #ced2d4;
+    cursor: inherit;
+}
+.calendar .days .day_num.selected {
+    background-color: #f1f2f3;
+    cursor: pointer;
+}
+
+/******************************* End Of Calendar Styling *******************************/
 
 

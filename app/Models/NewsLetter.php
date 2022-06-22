@@ -9,7 +9,7 @@ class Newsletter extends Model
 {
     use HasFactory;
 
-    protected $table = 'news_letter';
+    protected $table = 'newsletter';
 
      /**
      * The attributes that are mass assignable.
@@ -17,7 +17,7 @@ class Newsletter extends Model
      * @var array
      */
     protected $fillable = [
-        'email',
+        'newsletter_subscription_emails',
     ];
 
     /**

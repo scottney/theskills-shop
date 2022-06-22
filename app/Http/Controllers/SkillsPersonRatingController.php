@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\SkillsPersonRating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use RealRashid\SweetAlert\SweetAlertServiceProvider;
+use Session;
 
 class SkillsPersonRatingController extends Controller
 {
@@ -37,36 +37,25 @@ class SkillsPersonRatingController extends Controller
      */
     public function store(Request $request)
     {
-        /*
         $validatedData = $request->validate([
-            'skills_person_service_number' => 'required',
-            'rate' => 'integer|numeric|required',
-            'created_at' => '',
+            'skills_person_service_number' => ['required'],
+            'rate' => ['integer', 'numeric', 'required'],
+            'created_at' => [''],
         ]);
 
-        DB::table('skills_person_rating')->insert($validatedData);
-        //return view('pages.skills-persons.rate.thank-you');
-         return redirect()->route('index-main')->with('success', 'Skills Persons Rating was Successfull !!!');
-        */
+        if ($validatedData) {
+            $skillsPersonRating = SkillsPersonRating::create([
+                'skills_person_service_number' => $request->input('skills_person_service_number'),
+                'rate' => $request->input('rate'),
+                'created_at' => $request->input('created_at'),
+            ]);
 
-        $validatedData = Validator::make($request->all(), [
-            'skills_person_service_number' => 'required',
-            'rate' => 'integer|numeric|required',
-            'created_at' => '',
-        ]);
-
-        if ($validatedData->fails()) {
-            return redirect()->back()->withErrors($validatedData->messages()->all());
-        } else {
-            SkillsPersonRating::create([
-            'skills_person_service_number' => $request->input('skills_person_service_number'),
-            'rate' => $request->input('rate'),
-            'created_at' => $request->input('created_at'),
-        ]);
+            if ($skillsPersonRating) {
+                return redirect()->route('index_main')->with('skills-person-rating-success', 'Skills Person Rating was Successfull !!!');
+            } else {
+                return redirect()->back()->with('skillsperson-rating-error', 'A problem was encountered while processing your rating. Please re-check your details and try again');
+            }
         }
-
-        //return view('pages.skills-persons.rate.thank-you');
-         return redirect()->route('index_main')->with('success', 'Skills Person Rating was Successfull !!!');
     }
 
     /**
@@ -79,7 +68,7 @@ class SkillsPersonRatingController extends Controller
     {
         //Get all skills person rating records
         $skillsPersonRating = SkillsPersonRating::select('*')
-                                                ->paginate(25);
+                                                ->paginate(10);
         return view('admin.pages.skills_person.ratings.skills_person_rating_records',compact('skillsPersonRating'));
     }
 
@@ -90,7 +79,12 @@ class SkillsPersonRatingController extends Controller
         $skillsPersonRating = SkillsPersonRating::select('*')
                                             ->where('skills_person_service_number', 'LIKE', "%$query%")
                                             ->orWhere('rate', 'LIKE', "%$query%")
-                                            ->paginate(25);
+                                            ->paginate(10);
+
+        //Incase a record is not found, perform the action below
+        if($skillsPersonRating->isEmpty()) {
+            Session::flash('records-error-message', 'Record not found !!!');
+        }
 
         return view('admin.pages.skills_person.ratings.skills_person_rating_records',compact('skillsPersonRating'));
     }

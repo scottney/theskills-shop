@@ -1,11 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+    <div class="row justify-content-center pt-5 pb-5">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="card" id="portal_card_container">
+                <div class="card-header primaryColor">
+                    <div class="card-title text-white"><b>{{ __('Verify Your Email Address') }}</b></div>
+                </div>
 
                 <div class="card-body">
                     @if (session('resent'))
@@ -25,4 +28,5 @@
         </div>
     </div>
 </div>
+
 @endsection

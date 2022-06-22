@@ -24,7 +24,7 @@ class SkillsPersonRegistration extends Model
         'skills_person_service_number',
         'phone_number',
         'alternative_phone_number',
-        'email',
+        'skills_person_email',
         'address',
         'skillset',
         'skillset_description',

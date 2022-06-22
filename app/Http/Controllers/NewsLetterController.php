@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\NewsLetter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use RealRashid\SweetAlert\SweetAlertServiceProvider;
+use Mail, PDF;
+use App\Mail\SendNewsletterMail;
 
 class NewsLetterController extends Controller
 {
@@ -37,28 +38,24 @@ class NewsLetterController extends Controller
      */
     public function store(Request $request)
     {
-         /*
         $validatedData = $request->validate([
-            'email' => 'required',
-            'created_at' => '',
+            'newsletter_subscription_emails' => ['required', 'string', 'email', 'unique:newsletter', 'min:3', 'max:69'],
+            'created_at' => [''],
         ]);
 
-        DB::table('news_letter')->insert($validatedData);
-        return redirect()->route('index_main')->with('success', 'Message Sent !!!');
-        */
-        $validatedData = Validator::make($request->all(), [
-            'email' => 'required',
-        ]);
+        if ($validatedData) {
+            $newsletter = NewsLetter::create([
+                'newsletter_subscription_emails' => $request->input('newsletter_subscription_emails'),
+                'created_at' => $request->input('created_at'),
+            ]);
 
-        if($validatedData->fails()) {
-            return redirect()->back()->withErrors($validatedData->messages()->all());
-        } else {
-            NewsLetter::create([
-            'email' => $request->input('email'),
-        ]);
+            if ($newsletter) {
+                return redirect()->back()->with('newsletter-signUp-successfull', 'You have successfully signed up to our newsletter. :)');
+            } else {
+                return redirect()->back()->with('newsletter-signUp-failed', 'A problem occured when signing up to our newsletter service. Please try again later. :)');
+            }
         }
 
-        return redirect()->back()->with('info', 'Sign Up Successfull !!!');
     }
 
     /**
@@ -106,5 +103,54 @@ class NewsLetterController extends Controller
     public function destroy(NewsLetter $newsLetter)
     {
         //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\NewsLetter  $newsLetter
+     * @return \Illuminate\Http\Response
+     */
+    public function newsletter_sendout(Request $request)
+    {
+        $validatedData = $request->validate([
+            'newsletter_file' => ['required', 'mimes:pdf,doc,docx']
+        ]);
+
+        if ($validatedData) {
+
+            //Get filename with the extension
+            $newsletterFile = $request->file('newsletter_file')->getClientOriginalName();
+            //Get just filename
+            $newsletterFilename = pathinfo($newsletterFile,PATHINFO_FILENAME);
+            //Get just ext
+            $newsletterFileExtension = $request->file('newsletter_file')->getClientOriginalExtension();
+            //Filename to store
+            $newsletterFileToStore = $newsletterFilename.'_'.time().'.'.$newsletterFileExtension;
+
+            $newsletterPath = $request->file('newsletter_file')->storeAs('public/newsletters',$newsletterFileToStore);
+
+            if ($newsletterPath) {
+                $newsletterMail = 'sagatsaigon@gmail.com';
+
+                $details = [
+                    'title' => 'Mail from TheSkillsShop',
+                    'body' => 'Please find attached your newsletter for the month',
+                    
+                    //Get filename with the extension
+                    'newsletterFile' => $request->file('newsletter_file')->getClientOriginalName(),
+                ];
+
+                $mailData = Mail::to($newsletterMail)->send(new SendNewsletterMail($details));
+
+                if($mailData) {
+                    return redirect()->back()->with('newsletter-sent-successfully', 'Congratulations, your newsletter has been successfully delivered');
+                } else {
+                    return redirect()->back()->with('newsletter-sent-error', 'There was a problem delivering your newsletter');
+                }
+            } else {
+                return redirect()->back()->with('newsletter-upload-error', 'There was a problem uploading the newsletter to ther server for delivery.');
+            }
+        }
     }
 }

@@ -37,7 +37,6 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \RealRashid\SweetAlert\ToSweetAlert::class,
         ],
 
         'api' => [
@@ -63,6 +62,12 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+        //Protects against Cross Site Request Fogery
         'XssSanitizer' => \App\Http\Middleware\XssSanitizer::class,
+
+        //Prevents access to protected pages via the browser back button after log out
+        'prevent-back-history' => \App\Http\Middleware\PreventBackHistory::class,
+        
     ];
 }

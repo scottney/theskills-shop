@@ -1,17 +1,17 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    <div class="container-fluid content-wrapper container-fluid">
+    <div class="container-fluid content-wrapper">
         <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <div class="card shadow">
-                    <div class="card-header">
+                    <div class="card-header primaryColor">
                         <div class="card-title">
-                            <h5 class="display-5">MESSAGES</h5>      
+                            <h2 class="text-white"><b>MESSAGES</b></h2>      
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped table-bordered m-3">
+                        <table class="table table-striped table-bordered m-3" id="customerMessagesTable">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</td>
@@ -25,18 +25,18 @@
                                     <th scope="col">UPDATED AT</th>
                                 </tr>
                             </thead>
-                            @foreach($contacts as $contact)
+                            @foreach($messages as $message)
                             <tbody class="list">
                                 <tr id="contacts_items">
-                                    <td class="id"> {{ $contact->id }} </td>
-                                    <td class="first_name"> {{ $contact->first_name }} </td>
-                                    <td class="surname"> {{ $contact->surname }} </td>
-                                    <td class="middle_name"> {{ $contact->middle_name }} </td>
-                                    <td class="phone_number"> {{ $contact->phone_number }} </td>
-                                    <td class="email"> {{ $contact->email }} </td>
-                                    <td class="text_message"> {{ $contact->text_message }} </td>
-                                    <td class="created_at"> {{ $contact->created_at }} </td>
-                                    <td class="updated_at"> {{ $contact->updated_at }} </td>
+                                    <td class="id"> {{ $message->id }} </td>
+                                    <td class="first_name"> {{ $message->first_name }} </td>
+                                    <td class="surname"> {{ $message->surname }} </td>
+                                    <td class="middle_name"> {{ $message->middle_name }} </td>
+                                    <td class="phone_number"> {{ $message->phone_number }} </td>
+                                    <td class="contact_email"> <a href="mailto:">{{ $message->contact_email }}</a> </td>
+                                    <td class="text_message"> {{ $message->text_message }} </td>
+                                    <td class="created_at"> {{ $message->created_at }} </td>
+                                    <td class="updated_at"> {{ $message->updated_at }} </td>
                                 </tr>
                             </tbody>
                             @endforeach

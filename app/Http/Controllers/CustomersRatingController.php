@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CustomersRating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use RealRashid\SweetAlert\SweetAlertServiceProvider;
+use Session;
 
 class CustomersRatingController extends Controller
 {
@@ -37,36 +37,26 @@ class CustomersRatingController extends Controller
      */
     public function store(Request $request)
     {
-        /*
         $validatedData = $request->validate([
-            'customers_service_number' => 'required',
-            'rate' => 'required',
-            'created_at' => ''
+            'customers_service_number' => ['required'],
+            'rate' => ['required'],
+            'created_at' => [''],
         ]);
 
-        DB::table('customers_ratings')->insert($validatedData);
-        //return view('pages.customers.rate.thank-you');
-        return redirect()->route('index-main')->with('success', 'Customer Rating was Successfull. Thank You !!!');
-        */
+        if ($validatedData) {
 
-        $validatedData = Validator::make($request->all(), [
-            'customers_service_number' => 'required',
-            'rate' => 'integer|numeric|required',
-            'created_at' => '',
-        ]);
+            $customersRating = CustomersRating::create([
+                'customers_service_number' => $request->input('customers_service_number'),
+                'rate' => $request->input('rate'),
+                'created_at' => $request->input('created_at'),
+            ]);
 
-        if ($validatedData->fails()) {
-            return redirect()->back()->withErrors($validatedData->messages()->all());
-        } else {
-            CustomersRating::create([
-            'customers_service_number' => $request->input('customers_service_number'),
-            'rate' => $request->input('rate'),
-            'created_at' => $request->input('created_at'),
-        ]);
+            if ($customersRating) {
+                 return redirect()->route('index_main')->with('customers-rating-success', 'Customer Rating was Successfull. Thank You !!!');
+            } else {
+                return redirect()->back()->with('customers-rating-error', 'A problem was encountered while processing your booking. Please re-check your details and try again.');
+            }
         }
-
-        //return view('pages.customers.rate.thank-you');
-        return redirect()->route('index_main')->with('success', 'Customer Rating was Successfull. Thank You !!!');
     }
 
     /**
@@ -78,7 +68,7 @@ class CustomersRatingController extends Controller
     public function show(CustomersRating $customersRating)
     {
          $customersRating = CustomersRating::select('*')
-                                            ->paginate(25);
+                                            ->paginate(10);
          return view('admin.pages.customers.ratings.customers_rating_records',compact('customersRating'));
     }
 
@@ -89,9 +79,14 @@ class CustomersRatingController extends Controller
         $customersRating = CustomersRating::select('*')
                                             ->where('customers_service_number', 'LIKE', "%$query%")
                                             ->orWhere('rate', 'LIKE', "%$query%")
-                                            ->paginate(25);
+                                            ->paginate(10);
 
-         return view('admin.pages.customers.ratings.customers_rating_records',compact('customersRating'));
+        //Incase a record is not found, perform the action below
+        if($customersRating->isEmpty()) {
+            return redirect()->route('customers_rating_records')->with('records-error-message', 'Record not found');
+        } else {
+            return view('admin.pages.customers.ratings.customers_rating_records',compact('customersRating'));
+        }
     }
 
     /**
