@@ -114,7 +114,7 @@
 
     										<div class="row">
     											<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-    												<textarea class="form-control" id="input_blog_post_description" name="description" value="#" placeholder="Description..." required autocomplete="description" autofocus>{{ $blog['description'] }}</textarea>
+    												<textarea class="form-control" id="input_blog_post_description" name="description" value="#" placeholder="Description..." required autocomplete="description" rows="25" autofocus>{{ $blog['description'] }}</textarea>
     											</div>
     										</div>
     									</div>

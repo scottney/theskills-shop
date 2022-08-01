@@ -9,18 +9,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                     <i class="fa-solid fa-circle-xmark"></i>{{Session::get('customers-service-number-update-success')}}
                 </div>
-                
-                @elseif (Session::has('customer-service-number-successfull-email'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    <i class="fa-solid fa-circle-xmark"></i>{{Session::get('customer-service-number-successfull-email')}}
-                </div>
-
-                @elseif (Session::has('customer-service-number-failed-email'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    <i class="fa-solid fa-circle-xmark"></i>{{Session::get('customer-service-number-failed-email')}}
-                </div>
                 @endif
             </div>
         </div>
@@ -80,20 +68,11 @@
                                     <th scope="col"><b>ID</b></th>
                                     <th scope="col"><b>FIRST NAME</b></th>
                                     <th scope="col"><b>SURNAME</b></th>
-                                    <th scope="col"><b>MIDDLE NAME</b></th>
-                                    <th scope="col"><b>ID NUMBER</b></th>
                                     <th scope="col"><b>CUSTOMERS SERVICE NUMBER</b></th>
                                     <th scope="col"><b>EDIT CSN</b></th>
-                                    <th scope="col"><b>PHONE NUMBER</b></th>
-                                    <th scope="col"><b>ALTERNATIVE PHONE NUMBER</b></th>
-                                    <th scope="col"><b>CUSTOMER EMAIL</b></th>
-                                    <th scope="col"><b>ADDRESS</b></th>
                                     <th scope="col"><b>SERVICES</b></th>
-                                    <th scope="col"><b>SERVICE REQUIRED</b></th>
-                                    <th scope="col"><b>SERVICE DATE</b></th>
-                                    <th scope="col"><b>SERVICE TIME</b></th>
-                                    <th scope="col"><b>CREATED AT</b></th>
-                                    <th scope="col"><b>UPDATED AT</b></th>
+                                    <th scope="col"><b>SERVICE REQUIRED DESCRIPTION</b></th>
+                                    <th scope="col"><b>OTHER OPTIONS</b></th>
                                 </tr>
                             </thead>
 
@@ -103,29 +82,21 @@
                                     <td class="id" scope="row"> {{ $booking->id }} </td>
                                     <td class="first_name"> {{ $booking->first_name }} </td>
                                     <td class="surname"> {{ $booking->surname }} </td>
-                                    <td class="middle_name"> {{ $booking->middle_name }} </td>
-                                    <td class="id_number"> {{ $booking->id_number }} </td>
                                     <td class="customers_service_number" id="customersServiceNumber"> {{ $booking->customers_service_number }}</td>
                                     @if ($booking->customers_service_number == null)
                                     <td> <a class="btn btn-primary" id="customersServiceNumberButton" href=" {{ route('edit_customers_service_number', $booking->id) }} ">Edit CSN</a> </td>
                                     @else
                                     <td></td>
                                     @endif
-                                    <td class="phone_number"> {{ $booking->phone_number }} </td>
-                                    <td class="alternative_phone_number"> {{ $booking->alternative_phone_number }} </td>
-                                    @if ($booking->customers_service_number == null)
-                                    <td class="customer_email"> {{ $booking->customer_email }}</td>
-                                    @else
-                                    <td class="customer_email"> {{ $booking->customer_email }} <br><br> 
-                                        <a href=" {{ route('mailCSN', $booking->id) }} " class="bg-primary border border-secondary p-1 serviceNumberButton" data-bs-toggle="tooltip" data-bs-placement="top" title="Send Customer Service Number">Send CSN</a></td>
-                                    @endif
-                                    <td class="address"> {{ $booking->address }} </td>
                                     <td class="services"> {{ $booking->services }} </td>
                                     <td class="service_required"> {{ $booking->service_required }} </td>
-                                    <td class="service_date"> {{ $booking->service_date }} </td>
-                                    <td class="service_time"> {{ $booking->service_time }} </td>
-                                    <td class="created_at"> {{ $booking->created_at }} </td>
-                                    <td class="updated_at"> {{ $booking->updated_at }} </td>
+                                    @if ($booking->customers_service_number == null)
+                                    <td class="account_options"></td>
+                                    @else
+                                    <td class="other_options">
+                                        <a href="{{ route('customersData', $booking->id) }}" class="btn btn-primary" id="" data-bs-toggle="tooltip" data-bs-placement="top" title="View all customer details"><i class="fa-solid fa-eye"></i></a>
+                                    </td>
+                                    @endif
                                 </tr>
                             </tbody>
                             @endforeach

@@ -489,7 +489,7 @@ a[data-tooltip][data-placement="bottom"]::after {
 #input_booking_services:hover, #input_service_required:hover, #input_skillset:hover, #input_skillset_description:hover, 
 #input_passport_photo:hover, #input_police_report:hover, #input_letters:hover, #input_text_message:hover, 
 #input_date:hover, #input_time:hover, #input_created_at:hover, #input_updated_at:hover, #input_blog_post_name:hover, 
-#input_blog_post_author:hover, #input_blog_post_description:hover, #input_blog_post_image:hover, 
+#input_blog_post_author:hover, #input_blog_post_image:hover, 
 #input_blog_post_video:hover {
     background: #F8CC9B;
     cursor: pointer;

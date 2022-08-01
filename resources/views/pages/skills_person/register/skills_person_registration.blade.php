@@ -252,9 +252,9 @@
                                             <div class="input-group">
                                                 <span class="input-group-btn">
                                                     <span class="btn btn-primary">
-                                                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="imgInp">
+                                                        <input type="file" name="images" class="form-control @error('images') is-invalid @enderror" id="imgInp">
 
-                                                        @error('image')
+                                                        @error('images')
                                                         <span class="invalid-feedback alert alert-warning" role="alert">
                                                             <strong class="text-danger"><i class="fa-solid fa-circle-exclamation"></i>{{$message}}</strong>
                                                         </span>
@@ -280,9 +280,9 @@
                                             <div class="input-group">
                                                 <span class="input-group-btn">
                                                     <span class="btn btn-primary">
-                                                        <input type="file" name="report" class="form-control @error('report') is-invalid @enderror">
+                                                        <input type="file" name="reports" class="form-control @error('reports') is-invalid @enderror">
 
-                                                        @error('report')
+                                                        @error('reports')
                                                         <span class="invalid-feedback alert alert-warning" role="alert">
                                                             <strong class="text-danger"><i class="fa-solid fa-circle-exclamation"></i>{{$message}}</strong>
                                                         </span>

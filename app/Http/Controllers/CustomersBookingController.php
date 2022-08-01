@@ -96,6 +96,14 @@ class CustomersBookingController extends Controller
         return view('admin.pages.customers.bookings.customers_booking_records',compact('customersBooking'));
     }
 
+    //Function responsible for redirecting to the page for showing all of a customers data
+    public function showData($id) {
+        //Get all customers booking data
+        $customersBooking = CustomersBooking::findorfail($id);
+
+        return view('admin.pages.customers.bookings.customers_booking_records_details',compact('customersBooking'));
+    }
+
     //Function responsible for searching the customers booking entries
     public function search_customers(Request $request, CustomersBooking $customersBooking) 
     {

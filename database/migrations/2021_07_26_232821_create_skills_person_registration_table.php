@@ -26,8 +26,8 @@ class CreateSkillsPersonRegistrationTable extends Migration
             $table->string('address');
             $table->string('skillset');
             $table->string('skillset_description');
-            $table->string('image');
-            $table->string('report');
+            $table->string('images');
+            $table->string('reports');
             $table->string('letters');
             $table->timestamps();
         });

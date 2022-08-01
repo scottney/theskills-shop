@@ -122,25 +122,25 @@
 
                                         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                                              <label class="control-label" for="inputSkillsetDescription">Skillset Description</label>
-                                            <textarea class="form-control" id="input_skillset_description" name="skillset_description" value="#" readonly>
+                                            <textarea class="form-control" id="input_skillset_description" name="skillset_description" rows="5" value="#" readonly>
                                                 {{ $skillsPersonRegistration['skillset_description'] }}
                                             </textarea>
                                         </div>
 
                                         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                                              <label class="control-label" for="inputPassportPhoto">Passport Photo</label>
-                                            <input type="text" class="form-control" id="input_passport_photo" name="image" value="{{ $skillsPersonRegistration['image'] }}" readonly>
+                                            <input type="text" class="form-control" id="input_passport_photo" name="images" value="{{ $skillsPersonRegistration['images'] }}" readonly>
                                         </div>
                                     </div>
 
                                     <div class="row pt-3">
                                         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                                             <label class="control-label" for="inputPoliceReport">Police Report</label>
-                                            <input type="text" class="form-control" id="input_police_report" name="report" value="{{ $skillsPersonRegistration['report'] }}" readonly>
+                                            <input type="text" class="form-control" id="input_police_report" name="reports" value="{{ $skillsPersonRegistration['reports'] }}" readonly>
                                         </div>
 
                                         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                                            <label class="control-label" for="inputLetters">Letters</label>
+                                            <label class="control-label" for="inputLetters">Recommendation Letters</label>
                                             <input type="text" class="form-control" id="input_letters" name="letters" value="{{ $skillsPersonRegistration['letters'] }}" readonly>
                                         </div>
 

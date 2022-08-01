@@ -34,21 +34,21 @@
     			    <div class="carousel-item">
     				    <img class="nth_slide3">
     				   	<div class="carousel-caption">
-    						<h1 class="head_one">Here For You Through Every Step Of The Way</h1>
+    						<h1 class="head_one">Here With You Through Every Step Of The Way</h1>
     				    </div>
     			    </div>
 
     			    <div class="carousel-item">
     				    <img class="nth_slide4">
     				   	<div class="carousel-caption">
-    						<h1 class="head_one">Experience The Beauty Of Your Home</h1>
+    						<h1 class="head_one">Experience Beauty</h1>
     				    </div>
     			    </div>
 
     			    <div class="carousel-item">
     				    <img class="nth_slide5">
     				   	<div class="carousel-caption">
-    						<h1 class="head_one">Experience Blue Collar Service Delivery</h1>
+    						<h1 class="head_one">Experience Unique Blue Collar Service Delivery</h1>
     				    </div>
     			    </div>
     		    </div>

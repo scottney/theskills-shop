@@ -28,8 +28,8 @@ class SkillsPersonRegistration extends Model
         'address',
         'skillset',
         'skillset_description',
-        'image',
-        'report',
+        'images',
+        'reports',
         'letters',
     ];
     /**

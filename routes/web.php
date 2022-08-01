@@ -77,6 +77,9 @@ Route::get('/admin/dashboard', [HomeController::class, 'index_admin'])->name('da
 //Routes to the customers booking records page
 Route::get('/admin/pages/customers/bookings/customers booking records', [App\Http\Controllers\CustomersBookingController::class, 'show'])->name('customers_booking_records');
 
+//Routes to the customers booking all details page
+Route::get('/admin/pages/customers/bookings/customers booking records details/{id}', [App\Http\Controllers\CustomersBookingController::class, 'showData'])->name('customersData');
+
 //Routes responsible for sending the customer service number to the customer
 Route::get('/admin/pages/customers/bookings/customers booking records/send/customer/service/number/{id}', [App\Http\Controllers\CustomersBookingController::class, 'csnMail'])->name('mailCSN');
 
@@ -101,6 +104,9 @@ Route::get('/admin/pages/skills person/ratings/skills person rating records/sear
 //Routes to the skills person registration records page
 Route::get('/admin/pages/skills person/registrations/skills person registration records', [App\Http\Controllers\SkillsPersonRegistrationController::class, 'show'])->name('skills_person_registration_records');
 
+//Routes to the skills person registration data page
+Route::get('/admin/pages/skills person/registrations/skills person registration records details/{id}', [App\Http\Controllers\SkillsPersonRegistrationController::class, 'showData'])->name('skillsPersonData');
+
 //Routes responsible for sending the skills person service number to the skillsperson
 Route::get('/admin/pages/skills_person/registrations/spsn/email/send/skills/person/service/number/{id}', [App\Http\Controllers\SkillsPersonRegistrationController::class, 'spsnMail'])->name('mailSPSN');
 
@@ -109,6 +115,15 @@ Route::get('/admin/pages/skills person/registrations/skills person registration 
 
 //Routes to the skills person service number edit page
 Route::get('/admin/pages/skills person/registrations/edit record/skills person service number edit/{id}', [App\Http\Controllers\SkillsPersonRegistrationController::class, 'edit'])->name('edit_skills_person_service_number');
+
+//Route responsible of downloading the skills persons image
+Route::get('/admin/pages/skills person/registrations/skills person registration records details/{id}/download/skills/person/image', [App\Http\Controllers\SkillsPersonRegistrationController::class, 'downloadImage'])->name('downloadSkillsPersonImage');
+
+//Route responsible of downloading the skills person police report
+Route::get('/admin/pages/skills person/registrations/skills person registration records details/{id}/download/skills/person/police/report', [App\Http\Controllers\SkillsPersonRegistrationController::class, 'downloadPoliceReport'])->name('downloadSkillsPersonPoliceReport');
+
+//Route responsible of downloading the skills person letter of recommendation
+Route::get('/admin/pages/skills person/registrations/skills person registration records details/{id}/download/skills/person/recommendation/letter', [App\Http\Controllers\SkillsPersonRegistrationController::class, 'downloadRecommendationLetter'])->name('downloadSkillsPersonRecommendationLetter');
 
 //Route to redirect to the messages section
 Route::get('/admin/pages/messages/messages', [App\Http\Controllers\MessagesController::class, 'show'])->name('messages');
@@ -139,9 +154,6 @@ Route::get('/pages/blog/pages/edit/{id}', [App\Http\Controllers\BlogController::
 
 //Route to redirect to the delete blog post page
 Route::get('/pages/blog/pages/delete/{id}', [App\Http\Controllers\BlogController::class, 'delete'])->name('delete_blog_post');
-
-//Route that handles the download of skillpersons images
-Route::get('/admin/pages/skills person/registrations/skills person registration records/file/download/{id}', [App\Http\Controllers\SkillsPersonRegistrationController::class, 'imageDownload'])->name('imageFileDownloader');
 
 /************************** END OF ADMIN SITE FUNCTIONS ***************************************/
 

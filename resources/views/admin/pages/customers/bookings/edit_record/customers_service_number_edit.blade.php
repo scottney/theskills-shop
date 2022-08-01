@@ -119,7 +119,7 @@
 
                                         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                                             <label class="control-label" for="inputServiceRequired">Service Required</label>
-                                            <textarea class="form-control" id="input_service_required" name="service_required" value="#" readonly>
+                                            <textarea class="form-control" id="input_service_required" name="service_required" rows="5" value="#" readonly>
                                                 {{ $customersBooking['service_required'] }}
                                             </textarea>
                                         </div>

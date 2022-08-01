@@ -76,7 +76,7 @@
 									<div class="row">
 										<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
 											<label for="inputBlogPostDescription"><b>Description</b></label>
-											<textarea class="form-control" id="input_blog_post_description" name="description" value="#" placeholder="Description..." readonly>
+											<textarea class="form-control" id="input_blog_post_description" name="description" value="#" placeholder="Description..." rows="25" readonly>
 												{{ $blog['description'] }}
 											</textarea>
 										</div>
