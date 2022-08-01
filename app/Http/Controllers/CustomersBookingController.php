@@ -191,6 +191,12 @@ class CustomersBookingController extends Controller
 
          $pdf = PDF::loadView('admin.pages.calendar.pdf_view.schedules', ['customersBooking'=>$customersBooking]);
 
+         /*
+         Opens the PDF file in the browser
+         
+         return $pdf->stream();
+         */
+
          //Download the PDF file
          return $pdf->download('schedules.pdf');
     }

@@ -47,12 +47,12 @@ $calendar->add_bookings( 'Today', date("Y-m-d"), 1, 'green');
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                                         <a class="btn btn-primary" id="" href=" {{ route('create_bookings_pdf') }} ">Print Schedule to PDF</a>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                                         @foreach ($customersBooking as $booking)
                                             <table class="table table-striped table-bordered m-3">
                                                 <thead>
