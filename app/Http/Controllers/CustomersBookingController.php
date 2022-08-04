@@ -273,6 +273,22 @@ class CustomersBookingController extends Controller
         return $html;
     }
 
+    //Function responsible for searching the calendar schedules
+    public function search_calendar(Request $request, CustomersBooking $customersBooking) 
+    {
+        $query = $request->get('query');
+        $customersBooking = CustomersBooking::select('*')
+                                            ->where('service_date', 'LIKE', "%$query%")
+                                            ->paginate(10);
+
+        //Incase a record is not found, perform the action below
+        if($customersBooking->isEmpty()) {
+            return redirect()->route('schedules_search')->with('schedules-error-message', 'No Bookings Found for this date');
+        }
+
+        return view('admin.pages.calendar.calendar', ['customersBooking'=>$customersBooking]);
+    }
+
      /**
      * Responsible for sending the customer service number
      * 

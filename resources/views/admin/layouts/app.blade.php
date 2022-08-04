@@ -183,14 +183,6 @@ to get the desired effect
               </p>
             </a>
           </li>
-          <li class="nav-header text-white"><b>MAIN SITE LINKS</b></li>
-          <li class="nav-item">
-            <a href=" {{ route('adminBlog') }} " class="nav-link">
-              <p>
-                Blog
-              </p>
-            </a>
-          </li>
           <li class="nav-header text-white"><b>OPERATIONS</b></li>
           <li class="nav-item">
             

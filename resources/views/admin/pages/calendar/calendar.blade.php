@@ -48,12 +48,44 @@ $calendar->add_bookings( 'Today', date("Y-m-d"), 1, 'green');
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                        @if (Session::has('schedules-error-message'))
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                            <i class="fa-solid fa-circle-xmark"></i>{{Session::get('schedules-error-message')}}
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                                         <a class="btn btn-primary" id="" href=" {{ route('create_bookings_pdf') }} ">Print Schedule to PDF</a>
                                     </div>
+
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                        <form action="{{ route('schedules_search') }}" method="GET" class="search_schedules_form" id="query" name="query" accept-charset="UTF-8" enctype="multipart/form-data">
+                                            <div class="row">
+                                                @csrf
+
+                                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                                    <div class="row">
+                                                       <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 noPadding">
+                                                            <input type="date" class="form-control" value="" name="query" id="query" placeholder="Search schedules here..." autofocus>
+                                                       </div>
+
+                                                       <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 noPadding">
+                                                           <button type="submit" class="fa fa-search search_icon" title="Search..."></button>
+                                                       </div>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                        @foreach ($customersBooking as $booking)
                                             <table class="table table-striped table-bordered m-3">
                                                 <thead>
                                                     <tr id="customers_booking_calendar_records">
@@ -71,6 +103,7 @@ $calendar->add_bookings( 'Today', date("Y-m-d"), 1, 'green');
                                                         <th class="service_time">SERVICE TIME</th>
                                                     </tr>
                                                 </thead>
+                                                @foreach ($customersBooking as $booking)
                                                 <tbody class="list">
                                                     <tr id="customers_booking_calendar_records">
                                                         <td class="id" scope="row" title="ID"> {{ $booking->id }} </td>
@@ -87,8 +120,8 @@ $calendar->add_bookings( 'Today', date("Y-m-d"), 1, 'green');
                                                         <td class="service_time" title="SERVICE TIME"> {{ $booking->service_time }} </td>
                                                     </tr>
                                                 </tbody>
+                                                @endforeach
                                             </table>
-                                        @endforeach
                                     </div>
                                 </div>
                             </div>

@@ -50,9 +50,6 @@ Route::get('get/file', function(){
     return Storage::download('android/app-release.apk');
 });
 
-//Route to blog as guest user
-Route::get('/pages/blog/blog', [App\Http\Controllers\BlogController::class, 'show'])->name('blog');
-
 //End of site routes
 
 /************************** END OF MAIN SITE FUNCTIONS ***************************************/
@@ -140,20 +137,8 @@ Route::get('/admin/pages/calendar/calendar', [App\Http\Controllers\CustomersBook
 //Route that prints the calendar schedule to PDF
 Route::get('/admin/pages/calendar/pdf view/schedules', [App\Http\Controllers\CustomersBookingController::class, 'createPDF'])->name('create_bookings_pdf');
 
-//Route to blog as admin user
-Route::get('/pages/blog/blog/admin', [App\Http\Controllers\BlogController::class, 'show'])->name('adminBlog');
-
-//Route to handle all CRUD operations for the blog
-Route::resource('blog',BlogController::class);
-
-//Route to redirect to the create blog posts page
-Route::get('/pages/blog/pages/create', [App\Http\Controllers\BlogController::class, 'create'])->name('create_blog_posts');
-
-//Route to redirect to the edit blog posts page
-Route::get('/pages/blog/pages/edit/{id}', [App\Http\Controllers\BlogController::class, 'edit'])->name('edit_blog_posts');
-
-//Route to redirect to the delete blog post page
-Route::get('/pages/blog/pages/delete/{id}', [App\Http\Controllers\BlogController::class, 'delete'])->name('delete_blog_post');
+//Route that searches the calendar schedule for bookings of any day
+Route::get('/admin/pages/calendar/search/schedules', [App\Http\Controllers\CustomersBookingController::class, 'search_calendar'])->name('schedules_search');
 
 /************************** END OF ADMIN SITE FUNCTIONS ***************************************/
 

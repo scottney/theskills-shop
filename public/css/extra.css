@@ -318,16 +318,6 @@ a[data-tooltip][data-placement="bottom"]::after {
     margin-bottom: 20%;
 }
 
-.blogImageText {
-    font-weight: bold;
-    color: white; 
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5); /* Black see-through */ 
-    padding: 20px;
-    border-radius: 75px; 
-    margin-top: 10%;
-}
-
 /******************************* End of images slider styling *******************************/
 
 /******************************* Start of link buttons styling *******************************/
@@ -475,8 +465,7 @@ a[data-tooltip][data-placement="bottom"]::after {
 #input_contactEmail, #input_customerEmail, #input_skillsPersonEmail, #input_address, #input_location, 
 #input_booking_services, #input_service_required, #input_skillset, #input_skillset_description, 
 #input_passport_photo, #input_police_report, #input_letters, #input_text_message, #input_date, #input_time, 
-#input_created_at, #input_updated_at, #input_blog_post_name,#input_blog_post_author, #input_blog_post_image, 
-#input_blog_post_video, #input_blog_post_description, #query {
+#input_created_at, #input_updated_at, #query {
     border-radius: 15px;
     width: 100%;
 }
@@ -488,9 +477,7 @@ a[data-tooltip][data-placement="bottom"]::after {
 #input_customerEmail:hover, #input_skillsPersonEmail:hover, #input_address:hover, #input_location:hover, 
 #input_booking_services:hover, #input_service_required:hover, #input_skillset:hover, #input_skillset_description:hover, 
 #input_passport_photo:hover, #input_police_report:hover, #input_letters:hover, #input_text_message:hover, 
-#input_date:hover, #input_time:hover, #input_created_at:hover, #input_updated_at:hover, #input_blog_post_name:hover, 
-#input_blog_post_author:hover, #input_blog_post_image:hover, 
-#input_blog_post_video:hover {
+#input_date:hover, #input_time:hover, #input_created_at:hover, #input_updated_at:hover {
     background: #F8CC9B;
     cursor: pointer;
 }
@@ -529,7 +516,7 @@ a[data-tooltip][data-placement="bottom"]::after {
 
 /******************************* End of customers and skills person styling *******************************/
 
-/******************************* Start Of Newsletter and Blog Styling *******************************/
+/******************************* Start Of Newsletter Styling *******************************/
 #newsletter-sign-up {
     background: #A25C0C;
     border-radius: 15px;
@@ -548,20 +535,6 @@ a[data-tooltip][data-placement="bottom"]::after {
   background-attachment: fixed;
   background-size: cover;
   height: 475px;
-}
-
-.blogTextIndent {
-    text-indent: 5%;
-}
-
-.blog-slug {
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 25px;
-}
-
-.blog-slug:hover {
-  text-decoration: none;
 }
 
 #previewImageText, #previewVideoText {
@@ -594,43 +567,7 @@ a[data-tooltip][data-placement="bottom"]::after {
     height: 425px;
 }
 
-.blogReadMoreLink {
-    border-radius: 25px;
-    color: #ffffff;
-}
-
-.blogReadMoreLink:hover {
-    text-decoration: none;
-}
-
-#containerCardBlogPost {
-    width: 100%;
-    height: 300px;
-    box-shadow: 2px 2px 2px 2px #A25C0C;
-}
-
-#containerCardBlogPostBody p{
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-#blogPostModalBody::-webkit-scrollbar {
-  width: 10px;               /* width of the entire scrollbar */
-}
-
-#blogPostModalBody::-webkit-scrollbar-track {
-  background: #000000;        /* color of the tracking area */
-}
-
-#blogPostModalBody::-webkit-scrollbar-thumb {
-  background-color: blue;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid #FFFFFF;  /* creates padding around scroll thumb */
-}
-
-/******************************* End Of Newsletter and Blog Styling *******************************/
+/******************************* End Of Newsletter Styling *******************************/
 
 /******************************* Start Of Customer Bookings Admin Page Styling *******************************/
 

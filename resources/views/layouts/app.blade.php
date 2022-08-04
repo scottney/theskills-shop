@@ -133,42 +133,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                     <i class="fa-solid fa-circle-xmark"></i>{{Session::get('skillsperson-rating-error')}}
                 </div>
-
-                @elseif(Session::has('blogpost-create-success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    <i class="fa-solid fa-circle-xmark"></i>{{Session::get('blogpost-create-success')}}
-                </div>
-
-                @elseif(Session::has('blogpost-create-failed'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    <i class="fa-solid fa-circle-xmark"></i>{{Session::get('blogpost-create-failed')}}
-                </div>
-
-                @elseif(Session::has('blogpost-update-successfull'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    <i class="fa-solid fa-circle-xmark"></i>{{Session::get('blogpost-update-successfull')}}
-                </div>
-
-                @elseif(Session::has('blogpost-update-failed'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    <i class="fa-solid fa-circle-xmark"></i>{{Session::get('blogpost-update-failed')}}
-                </div>
-
-                @elseif(Session::has('blog-post-delete-success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    <i class="fa-solid fa-circle-xmark"></i>{{Session::get('blog-post-delete-success')}}
-                </div>
-
-                @elseif(Session::has('blog-post-delete-failed'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    <i class="fa-solid fa-circle-xmark"></i>{{Session::get('blog-post-delete-failed')}}
-                </div>
                 @endif
             </div>
         </div>
@@ -201,16 +165,6 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white"  id="link_nav" href=" {{ route('index_main') }}#operations "><b>{{ __('OPERATIONS') }}</b></a>
                             </li>
-
-                            @if (Auth::check())
-                            <li class="nav-item">
-                                <a class="nav-link text-white"  id="link_nav" href=" {{ route('adminBlog') }} "><b>{{ __('BLOG') }}</b></a>
-                            </li>
-                            @else
-                            <li class="nav-item">
-                                <a class="nav-link text-white"  id="link_nav" href=" {{ route('blog') }} "><b>{{ __('BLOG') }}</b></a>
-                            </li>
-                            @endif
 
                             <li class="nav-item">
                                 <a class="nav-link text-white"  id="link_nav" href=" {{ route('index_main') }}#testimonials "><b>{{ __('TESTIMONIALS') }}</b></a>
@@ -327,10 +281,6 @@
                             <li>
                                 <a href=" {{ route('index_main') }}#contactUs " class="card-text text-light"><i class="fa fa-chevron-right p-3" aria-hidden="true"></i>Contacts</a>
                             </li>
-
-                            <li>
-                                <a href=" # " class="text-light"><i class="fa fa-chevron-right p-3" aria-hidden="true"></i>Blog</a>
-                            </li>
                         </ul>
                     </div>
 
@@ -424,49 +374,6 @@
         }
     }
 
-    //Function responsible for displaying the blog image preview
-    function previewImage(input) {
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-          document.querySelector("#imagePreview").setAttribute("src",e.target.result);
-        }
-         reader.readAsDataURL(input.files[0]); 
-      }
-  }
-
-  //Function responsible for displaying the blog image preview
-    function previewVideo(input) {
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-          document.querySelector("#videoPreview").setAttribute("src",e.target.result);
-        }
-         reader.readAsDataURL(input.files[0]); 
-      }
-  }
-
-    //Function responsible for showing the preview image text
-    function previewImageTextReveal() {
-        var image_text = document.getElementById("previewImageText");
-        var image_content = document.getElementById("input_blog_post_image").value;
-
-        if(image_content !== null) {
-            image_text.style.display = "block";
-        }
-    }
-
-    //Function responsible for showing the preview image and preview video texts
-    function previewVideoTextReveal() {
-        var video_text = document.getElementById("previewVideoText");
-        var video_content = document.getElementById("input_blog_post_video").value;
-
-        if(video_content !== null) {
-            video_text.style.display = "block";
-        }
-    }
 
 
 </script>
