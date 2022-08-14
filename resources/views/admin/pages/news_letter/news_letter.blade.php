@@ -27,10 +27,7 @@
 
         <div class="row pt-3">
             <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                <p><b>Supported filetypes include:</b>
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-info">.docx, .doc, .pdf</li>
-                    </ul></p>
+                <p>Supported filetypes include:<b>.docx, .doc, .pdf</b></p>
                 <form method="POST" action=" {{ route('sendout') }} " enctype="multipart/form-data" role="form" accept-charset="UTF-8">
                     @csrf
 
